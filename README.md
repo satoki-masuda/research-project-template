@@ -37,6 +37,7 @@ Describe the following:
 │   ├── figures/
 │   └── tables/
 ├── manuscripts/
+├── AGENTS.md
 ├── .gitignore
 ├── LICENSE
 ├── .python-version
@@ -67,8 +68,25 @@ Describe the following:
 
 - Everything under `data/` is ignored by Git, except `.gitkeep` files that preserve the directory structure.
 - Treat `data/raw/` as immutable. Create derived datasets in `data/processed/`.
+- Store sensitive raw data, when needed, under `data/raw/private/`. Never make that directory available in a coding-agent workspace.
 - Under `manuscripts/`, Git tracks only `.tex`, `.bib`, `.cls`, `.sty`, and `.gitkeep` files.
 - Do not commit secrets. Put local environment values in `.env`; provide safe examples in `.env.example` when needed.
+
+## Coding-agent workflow
+
+Use Codex or another coding agent only in a dedicated Git worktree or a fresh clone that contains tracked project files but no private research data. Keep the primary checkout, where private data may exist, separate from the agent workspace.
+
+For example, create a task-specific worktree from the repository's primary checkout:
+
+```bash
+git worktree add ../project-codex -b codex/task main
+cd ../project-codex
+uv sync --locked --dev
+```
+
+A fresh clone in a separate location is also suitable. Before starting an agent, verify that `data/raw/private/` and other sensitive ignored files are absent from that workspace. Use synthetic, anonymized, or explicitly approved sample data for development and tests.
+
+`AGENTS.md` defines the expected agent scope: routine work stays in `src/`, `notebooks/`, and `tests/`, with project configuration and documentation changed only when necessary. It also prohibits any access to `data/raw/private/`. These instructions help prevent mistakes, but they are not a security boundary; separation of the private data from the agent workspace is the actual protection.
 
 ## Environment
 
