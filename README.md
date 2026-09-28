@@ -101,6 +101,15 @@ This project uses [uv](https://docs.astral.sh/uv/) to manage Python, dependencie
 uv sync --locked --dev
 ```
 
+The template includes a baseline research stack:
+
+- data and scientific computing: NumPy, pandas, SciPy, and scikit-learn
+- visualization: Matplotlib and seaborn
+- geospatial analysis: GeoPandas and Shapely
+- graphs and parallel computing: NetworkX and Ray
+- research utilities: jpholiday and tqdm
+- notebook environment: Jupyter and ipykernel
+
 Run project commands inside the managed environment:
 
 ```bash
