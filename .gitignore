@@ -1,0 +1,85 @@
+# Operating systems
+.DS_Store
+Thumbs.db
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# uv and virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+secrets/
+credentials/
+*.pem
+*.key
+
+# Logs, caches, and temporary files
+*.log
+tmp/
+temp/
+.cache/
+
+# Research data: ignore contents but retain directory placeholders
+data/**
+!data/raw/
+!data/raw/.gitkeep
+!data/processed/
+!data/processed/.gitkeep
+
+# Generated research outputs
+results/models/**
+!results/models/.gitkeep
+results/figures/**
+!results/figures/.gitkeep
+results/tables/**
+!results/tables/.gitkeep
+
+# Manuscripts: track only LaTeX sources/support files and placeholders
+manuscripts/**
+!manuscripts/**/
+!manuscripts/**/*.tex
+!manuscripts/**/*.bib
+!manuscripts/**/*.cls
+!manuscripts/**/*.sty
+!manuscripts/**/.gitkeep
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.pdf
