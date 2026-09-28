@@ -3,7 +3,8 @@
 ## Working scope
 
 - Use coding agents only from a dedicated Git worktree or fresh clone that contains no private or ignored research data.
-- Keep routine agent edits within `src/`, `notebooks/`, `manuscripts/`, , and `tests/`.
+- Keep routine agent edits within `src/`, `notebooks/`, `manuscripts/`, and `tests/`.
+- Agents may read `data/raw/schema/` and `data/processed/schema/` as the approved descriptions of dataset structure and may update them when the task requires schema documentation changes.
 - Edit `pyproject.toml`, `uv.lock`, `config/`, `.github/`, and project documentation only when the task requires it.
 - Do not add new top-level directories or change the repository's data-handling policy without explicit user approval.
 
@@ -21,6 +22,7 @@
 - Use `uv` for Python, dependency management, and command execution.
 - Keep `pyproject.toml` and `uv.lock` synchronized; do not introduce `requirements.txt` or another package manager unless explicitly requested.
 - Treat `data/raw/` as immutable and write derived datasets to `data/processed/`.
+- Keep only non-sensitive schema definitions and data dictionaries in the schema directories; never include real records, identifiers, secrets, or sensitive sample values.
 - Do not force-add files ignored by `.gitignore`.
 - Write generated research outputs to the appropriate directory under `results/`.
 

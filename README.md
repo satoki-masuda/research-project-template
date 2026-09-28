@@ -21,7 +21,9 @@ Describe the following:
 │   └── pull_request_template.md
 ├── data/
 │   ├── raw/
+│   │   └── schema/
 │   └── processed/
+│       └── schema/
 ├── notebooks/
 │   ├── exploratory/
 │   └── reports/
@@ -51,7 +53,9 @@ Describe the following:
 | Directory | Purpose |
 | --- | --- |
 | `data/raw/` | Original source data. Never edit it manually. |
+| `data/raw/schema/` | Version-controlled schemas and data dictionaries for original inputs. |
 | `data/processed/` | Analysis-ready data derived from raw data. |
+| `data/processed/schema/` | Version-controlled schemas and data dictionaries for derived datasets. |
 | `notebooks/exploratory/` | Exploration, prototyping, and one-off checks. |
 | `notebooks/reports/` | Finalized, narrative analyses and reports. |
 | `src/data/` | Reusable loading, validation, cleaning, and preprocessing code. |
@@ -66,8 +70,9 @@ Describe the following:
 
 ## Data and manuscript policy
 
-- Everything under `data/` is ignored by Git, except `.gitkeep` files that preserve the directory structure.
+- Everything under `data/` is ignored by Git, except `.gitkeep` files that preserve the directory structure and the contents of `data/raw/schema/` and `data/processed/schema/`.
 - Treat `data/raw/` as immutable. Create derived datasets in `data/processed/`.
+- Document original inputs in `data/raw/schema/` and derived datasets in `data/processed/schema/`. Include column names, types, nullability, constraints, and descriptions, but never include real records, secrets, identifiers, or sensitive sample values.
 - Store sensitive raw data, when needed, under `data/raw/private/`. Never make that directory available in a coding-agent workspace.
 - Under `manuscripts/`, Git tracks only `.tex`, `.bib`, `.cls`, `.sty`, and `.gitkeep` files.
 - Do not commit secrets. Put local environment values in `.env`; provide safe examples in `.env.example` when needed.
@@ -84,7 +89,7 @@ cd ../project-codex
 uv sync --locked --dev
 ```
 
-A fresh clone in a separate location is also suitable. Before starting an agent, verify that `data/raw/private/` and other sensitive ignored files are absent from that workspace. Use synthetic, anonymized, or explicitly approved sample data for development and tests.
+A fresh clone in a separate location is also suitable. Before starting an agent, verify that `data/raw/private/` and other sensitive ignored files are absent from that workspace. Agents may use the tracked metadata in the schema directories; use synthetic, anonymized, or explicitly approved sample data when actual records are needed for development and tests.
 
 `AGENTS.md` defines the expected agent scope: routine work stays in `src/`, `notebooks/`, and `tests/`, with project configuration and documentation changed only when necessary. It also prohibits any access to `data/raw/private/`. These instructions help prevent mistakes, but they are not a security boundary; separation of the private data from the agent workspace is the actual protection.
 
@@ -108,10 +113,12 @@ Add a runtime dependency with `uv add PACKAGE`; add a development dependency wit
 ## Reproducible workflow
 
 1. Place original inputs in `data/raw/` without modifying them.
-2. Put reusable processing and analysis logic in `src/`.
-3. Keep exploratory work in `notebooks/exploratory/`; move finalized narratives to `notebooks/reports/`.
-4. Write generated datasets to `data/processed/` and generated outputs to `results/`.
-5. Record parameters in `config/`, add tests in `tests/`, and commit source files together with `uv.lock`.
+2. Document input structure in `data/raw/schema/` without copying real records or sensitive values.
+3. Put reusable processing and analysis logic in `src/`.
+4. Keep exploratory work in `notebooks/exploratory/`; move finalized narratives to `notebooks/reports/`.
+5. Write generated datasets to `data/processed/` and document their structure in `data/processed/schema/`.
+6. Write generated outputs to `results/`.
+7. Record parameters in `config/`, add tests in `tests/`, and commit source files together with `uv.lock`.
 
 ## License
 

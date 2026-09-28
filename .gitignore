@@ -46,12 +46,16 @@ tmp/
 temp/
 .cache/
 
-# Research data: ignore contents but retain directory placeholders
+# Research data: ignore contents, but track placeholders and safe schemas
 data/**
 !data/raw/
 !data/raw/.gitkeep
+!data/raw/schema/
+!data/raw/schema/**
 !data/processed/
 !data/processed/.gitkeep
+!data/processed/schema/
+!data/processed/schema/**
 
 # Generated research outputs
 results/models/**
