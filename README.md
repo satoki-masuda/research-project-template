@@ -103,10 +103,11 @@ uv sync --locked --dev
 
 The template includes a baseline research stack:
 
-- data and scientific computing: NumPy, pandas, SciPy, and scikit-learn
+- data and scientific computing: NumPy, pandas, SciPy, scikit-learn, and statsmodels
+- tabular file support: openpyxl
 - visualization: Matplotlib and seaborn
 - geospatial analysis: GeoPandas and Shapely
-- graphs and parallel computing: NetworkX and Ray
+- graph analysis: NetworkX
 - research utilities: jpholiday and tqdm
 - notebook environment: Jupyter and ipykernel
 
