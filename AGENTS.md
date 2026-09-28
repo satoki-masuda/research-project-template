@@ -3,7 +3,7 @@
 ## Working scope
 
 - Use coding agents only from a dedicated Git worktree or fresh clone that contains no private or ignored research data.
-- Keep routine agent edits within `src/`, `notebooks/`, and `tests/`.
+- Keep routine agent edits within `src/`, `notebooks/`, `manuscripts/`, , and `tests/`.
 - Edit `pyproject.toml`, `uv.lock`, `config/`, `.github/`, and project documentation only when the task requires it.
 - Do not add new top-level directories or change the repository's data-handling policy without explicit user approval.
 
