@@ -5,10 +5,11 @@
   "description": "Marp slides for the research project",
   "scripts": {
     "slides:preview": "marp slides/slides.md --theme-set slides/themes/research.css --html --allow-local-files --server",
-    "slides:html": "marp slides/slides.md --theme-set slides/themes/research.css --html --allow-local-files --output dist/slides.html",
-    "slides:pdf": "marp slides/slides.md --theme-set slides/themes/research.css --pdf --allow-local-files --output dist/slides.pdf",
-    "slides:pptx": "marp slides/slides.md --theme-set slides/themes/research.css --pptx --allow-local-files --output dist/slides.pptx",
-    "slides:build": "npm run slides:html && npm run slides:pdf && npm run slides:pptx"
+    "slides:clean": "node -e \"const fs=require('node:fs');fs.rmSync('slides/dist',{recursive:true,force:true});fs.mkdirSync('slides/dist',{recursive:true})\"",
+    "slides:html": "marp slides/slides.md --theme-set slides/themes/research.css --html --allow-local-files --output slides/dist/slides.html",
+    "slides:pdf": "marp slides/slides.md --theme-set slides/themes/research.css --pdf --allow-local-files --output slides/dist/slides.pdf",
+    "slides:pptx": "marp slides/slides.md --theme-set slides/themes/research.css --pptx --allow-local-files --output slides/dist/slides.pptx",
+    "slides:build": "npm run slides:clean && npm run slides:html && npm run slides:pdf && npm run slides:pptx"
   },
   "devDependencies": {
     "@marp-team/marp-cli": "4.5.1"

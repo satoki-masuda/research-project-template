@@ -43,6 +43,7 @@ Describe the following:
 │   ├── assets/
 │   ├── themes/
 │   │   └── research.css
+│   ├── dist/              # generated; not tracked
 │   └── slides.md
 ├── AGENTS.md
 ├── .gitignore
@@ -143,7 +144,7 @@ Edit `slides/slides.md`, place images in `slides/assets/`, and adjust the shared
 npm run slides:build
 ```
 
-The generated HTML, PDF, and PowerPoint files are written to the ignored `dist/` directory. GitHub Actions also builds them and stores them as a downloadable workflow artifact.
+The generated HTML, PDF, and PowerPoint files are written to the ignored `slides/dist/` directory. Each build removes old files first. GitHub Actions also builds the same files and stores them as a downloadable workflow artifact.
 
 ## Reproducible workflow
 

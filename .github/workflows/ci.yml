@@ -41,8 +41,8 @@ jobs:
         with:
           name: slides-${{ github.sha }}
           path: |
-            dist/slides.html
-            dist/slides.pdf
-            dist/slides.pptx
+            slides/dist/slides.html
+            slides/dist/slides.pdf
+            slides/dist/slides.pptx
           retention-days: 30
           if-no-files-found: error
