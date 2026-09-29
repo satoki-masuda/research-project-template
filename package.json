@@ -4,7 +4,7 @@
   "private": true,
   "description": "Marp slides for the research project",
   "scripts": {
-    "slides:preview": "marp slides/slides.md --theme-set slides/themes/research.css --html --allow-local-files --server",
+    "slides:preview": "marp slides --theme-set slides/themes/research.css --html --allow-local-files --server",
     "slides:clean": "node -e \"const fs=require('node:fs');fs.rmSync('slides/dist',{recursive:true,force:true});fs.mkdirSync('slides/dist',{recursive:true})\"",
     "slides:html": "marp slides/slides.md --theme-set slides/themes/research.css --html --allow-local-files --output slides/dist/slides.html",
     "slides:pdf": "marp slides/slides.md --theme-set slides/themes/research.css --pdf --allow-local-files --output slides/dist/slides.pdf",
