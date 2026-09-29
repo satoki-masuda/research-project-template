@@ -2,100 +2,203 @@
 @import 'default';
 
 :root {
-  --accent: #1469c7;
-  --accent-dark: #0b3f77;
-  --accent-soft: #eaf3ff;
+  --fw: 1;
+  --blue: #1469c7;
+  --blue-dark: #0b3f77;
+  --blue-soft: #eaf3ff;
   --ink: #172033;
-  --muted: #667085;
+  --muted: #5e6b7c;
   --line: #d7e0ec;
 }
 
 section {
   width: 1280px;
   height: 720px;
-  padding: 44px 68px 52px;
+  padding: 36px 68px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   background: #ffffff;
   color: var(--ink);
   font-family: "Noto Sans JP", "Yu Gothic", "Hiragino Sans", sans-serif;
-  font-size: 27px;
-  line-height: 1.4;
+  font-size: 24px;
+  line-height: 1.38;
+}
+
+section::after {
+  right: 26px;
+  bottom: 16px;
+  color: #7c8999;
+  font-size: 24px;
+}
+
+section[data-marpit-pagination="1"],
+section.lead {
+  justify-content: center;
+  text-align: center;
+}
+
+footer {
+  left: 68px;
+  bottom: 15px;
+  color: #7c8999;
+  font-size: 16px;
 }
 
 h1 {
-  margin: 0 0 18px;
-  color: var(--accent-dark);
-  font-size: 46px;
-  line-height: 1.15;
+  margin: 0 0 10px;
+  color: var(--blue-dark);
+  font-size: 36px;
+  line-height: 1.16;
+  letter-spacing: -0.02em;
+}
+
+section[data-marpit-pagination="1"] h1,
+section.lead h1 {
+  max-width: 1080px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 56px;
+}
+
+section.lead,
+section.section-divider {
+  justify-content: center;
+  text-align: center;
+  background: var(--blue-dark);
+  color: #ffffff;
+}
+
+section.section-divider h1 {
+  max-width: 1080px;
+  margin: 0 auto;
+  color: #ffffff;
+  font-size: 64px;
+}
+
+section.lead h1 {
+  color: #ffffff;
+}
+
+section.lead ul,
+section.lead ol {
+  align-self: center;
+  padding-left: 1.3em;
+  text-align: left;
+}
+
+section.lead::after,
+section.lead footer,
+section.section-divider::after,
+section.section-divider footer {
+  color: rgba(255, 255, 255, 0.65);
 }
 
 h2 {
-  margin: 16px 0 8px;
-  color: var(--accent);
-  font-size: 31px;
+  margin: 15px 0 0;
+  color: var(--blue);
+  font-size: 28px;
 }
 
 p,
 ul,
 ol {
   margin-top: 0;
+  margin-bottom: 5px;
+}
+
+li {
+  margin: 0;
 }
 
 strong {
-  color: var(--accent-dark);
+  color: var(--blue-dark);
 }
 
-blockquote {
-  margin: 18px 0;
-  padding: 14px 20px;
-  border-left: 6px solid var(--accent);
-  background: var(--accent-soft);
+a {
+  color: var(--blue);
+}
+
+code {
+  padding: 2px 7px;
+  border-radius: 5px;
+  background: #eef2f7;
+  color: #143b68;
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  margin: 10px 0;
+  padding: 14px 18px;
+  border: 1px solid #cdd8e6;
+  border-radius: 10px;
+  background: #f7f9fc;
+  font-size: 20px;
+  line-height: 1.28;
+}
+
+pre code {
+  padding: 0;
+  background: transparent;
 }
 
 table {
   width: 100%;
+  margin: 8px 0 12px;
   border-collapse: collapse;
+  font-size: 24px;
 }
 
 th,
 td {
-  padding: 10px 14px;
+  padding: 9px 12px;
   border: 1px solid var(--line);
+  vertical-align: top;
 }
 
 th {
-  background: var(--accent-dark);
+  background: var(--blue-dark);
   color: #ffffff;
+  text-align: left;
 }
 
-footer {
-  left: 68px;
-  bottom: 18px;
-  color: var(--muted);
-  font-size: 16px;
+tbody tr:nth-child(even) {
+  background: #ffffff;
 }
 
-section::after {
-  right: 28px;
-  bottom: 16px;
-  color: var(--muted);
-  font-size: 18px;
+blockquote {
+  margin: 14px 0 0;
+  padding: 12px 16px;
+  border-left: 6px solid var(--blue);
+  background: var(--blue-soft);
+  font-weight: 650;
 }
 
-section.lead {
+blockquote p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 6px auto 12px;
+  object-fit: contain;
+  border: 0;
+  box-shadow: none;
+}
+
+.flex {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  background: var(--accent-dark);
-  color: #ffffff;
+  gap: 1em;
 }
 
-section.lead h1 {
-  color: #ffffff;
-  font-size: 58px;
+.flex > div {
+  flex: var(--fw, 1);
+  min-width: 0;
 }
 
-section.lead footer,
-section.lead::after {
-  color: rgba(255, 255, 255, 0.7);
+.sa {
+  justify-content: space-around;
 }
