@@ -20,7 +20,7 @@ section {
   justify-content: flex-start;
   background: #ffffff;
   color: var(--ink);
-  font-family: "Noto Sans JP", "Yu Gothic", "Hiragino Sans", sans-serif;
+  font-family: "Segoe UI", "Noto Sans JP", "Yu Gothic", "Hiragino Sans", sans-serif;
   font-size: 24px;
   line-height: 1.38;
 }
