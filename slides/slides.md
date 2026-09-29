@@ -8,8 +8,6 @@ description: Research presentation
 footer: Project Title
 ---
 
-<!-- _class: lead -->
-
 # Presentation Title
 
 Researcher Name  
@@ -55,8 +53,6 @@ Add figures to `slides/assets/` and reference them with standard Markdown:
 - Keep each slide focused on one message.
 
 ---
-
-<!-- _class: lead -->
 
 # Conclusion
 

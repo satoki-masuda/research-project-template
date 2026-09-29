@@ -32,8 +32,7 @@ section::after {
   font-size: 24px;
 }
 
-section[data-marpit-pagination="1"],
-section.lead {
+section[data-marpit-pagination="1"] {
   justify-content: center;
   text-align: center;
 }
@@ -46,22 +45,20 @@ footer {
 }
 
 h1 {
-  margin: 0 0 10px;
+  margin: 0px 0 10px;
   color: var(--blue-dark);
   font-size: 36px;
   line-height: 1.16;
   letter-spacing: -0.02em;
 }
 
-section[data-marpit-pagination="1"] h1,
-section.lead h1 {
+section[data-marpit-pagination="1"] h1 {
   max-width: 1080px;
   margin-right: auto;
   margin-left: auto;
   font-size: 56px;
 }
 
-section.lead,
 section.section-divider {
   justify-content: center;
   text-align: center;
@@ -76,26 +73,13 @@ section.section-divider h1 {
   font-size: 64px;
 }
 
-section.lead h1 {
-  color: #ffffff;
-}
-
-section.lead ul,
-section.lead ol {
-  align-self: center;
-  padding-left: 1.3em;
-  text-align: left;
-}
-
-section.lead::after,
-section.lead footer,
 section.section-divider::after,
 section.section-divider footer {
   color: rgba(255, 255, 255, 0.65);
 }
 
 h2 {
-  margin: 15px 0 0;
+  margin: 15px 0 0px;
   color: var(--blue);
   font-size: 28px;
 }
@@ -103,12 +87,12 @@ h2 {
 p,
 ul,
 ol {
-  margin-top: 0;
+  margin-top: 0px;
   margin-bottom: 5px;
 }
 
 li {
-  margin: 0;
+  margin: 0px 0;
 }
 
 strong {
