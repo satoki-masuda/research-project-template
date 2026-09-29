@@ -39,9 +39,16 @@ Describe the following:
 │   ├── figures/
 │   └── tables/
 ├── manuscripts/
+├── slides/
+│   ├── assets/
+│   ├── themes/
+│   │   └── research.css
+│   └── slides.md
 ├── AGENTS.md
 ├── .gitignore
 ├── LICENSE
+├── package.json
+├── package-lock.json
 ├── .python-version
 ├── pyproject.toml
 ├── uv.lock
@@ -67,6 +74,7 @@ Describe the following:
 | `results/figures/` | Generated figures. |
 | `results/tables/` | Generated tables. |
 | `manuscripts/` | Manuscript sources, bibliography files, and LaTeX support files. |
+| `slides/` | Marp slide source, local assets, and the shared research theme. |
 
 ## Data and manuscript policy
 
@@ -119,6 +127,23 @@ uv run ruff check .
 ```
 
 Add a runtime dependency with `uv add PACKAGE`; add a development dependency with `uv add --dev PACKAGE`.
+
+## Slides
+
+Slides are written in Markdown with Marp. Node.js 20 or later is required.
+
+```bash
+npm ci
+npm run slides:preview
+```
+
+Edit `slides/slides.md`, place images in `slides/assets/`, and adjust the shared style in `slides/themes/research.css`. Build all distribution formats with:
+
+```bash
+npm run slides:build
+```
+
+The generated HTML, PDF, and PowerPoint files are written to the ignored `dist/` directory. GitHub Actions also builds them and stores them as a downloadable workflow artifact.
 
 ## Reproducible workflow
 

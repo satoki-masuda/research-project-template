@@ -28,6 +28,9 @@ dist/
 venv/
 env/
 
+# Node.js
+node_modules/
+
 # Jupyter
 .ipynb_checkpoints/
 

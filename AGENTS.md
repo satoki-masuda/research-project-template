@@ -3,7 +3,7 @@
 ## Working scope
 
 - Use coding agents only from a dedicated Git worktree or fresh clone that contains no private or ignored research data.
-- Keep routine agent edits within `src/`, `notebooks/`, `manuscripts/`, and `tests/`.
+- Keep routine agent edits within `src/`, `notebooks/`, `manuscripts/`, `slides/`, and `tests/`.
 - Agents may read `data/raw/schema/` and `data/processed/schema/` as the approved descriptions of dataset structure and may update them when the task requires schema documentation changes.
 - Edit `pyproject.toml`, `uv.lock`, `config/`, `.github/`, and project documentation only when the task requires it.
 - Do not add new top-level directories or change the repository's data-handling policy without explicit user approval.
@@ -33,4 +33,10 @@ Before handing off code changes, run:
 ```bash
 uv run ruff check .
 uv run pytest
+```
+
+When slide sources or the Marp configuration change, also run:
+
+```bash
+npm run slides:build
 ```

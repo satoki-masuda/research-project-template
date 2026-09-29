@@ -1,0 +1,101 @@
+/* @theme research */
+@import 'default';
+
+:root {
+  --accent: #1469c7;
+  --accent-dark: #0b3f77;
+  --accent-soft: #eaf3ff;
+  --ink: #172033;
+  --muted: #667085;
+  --line: #d7e0ec;
+}
+
+section {
+  width: 1280px;
+  height: 720px;
+  padding: 44px 68px 52px;
+  background: #ffffff;
+  color: var(--ink);
+  font-family: "Noto Sans JP", "Yu Gothic", "Hiragino Sans", sans-serif;
+  font-size: 27px;
+  line-height: 1.4;
+}
+
+h1 {
+  margin: 0 0 18px;
+  color: var(--accent-dark);
+  font-size: 46px;
+  line-height: 1.15;
+}
+
+h2 {
+  margin: 16px 0 8px;
+  color: var(--accent);
+  font-size: 31px;
+}
+
+p,
+ul,
+ol {
+  margin-top: 0;
+}
+
+strong {
+  color: var(--accent-dark);
+}
+
+blockquote {
+  margin: 18px 0;
+  padding: 14px 20px;
+  border-left: 6px solid var(--accent);
+  background: var(--accent-soft);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+}
+
+th {
+  background: var(--accent-dark);
+  color: #ffffff;
+}
+
+footer {
+  left: 68px;
+  bottom: 18px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+section::after {
+  right: 28px;
+  bottom: 16px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+section.lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background: var(--accent-dark);
+  color: #ffffff;
+}
+
+section.lead h1 {
+  color: #ffffff;
+  font-size: 58px;
+}
+
+section.lead footer,
+section.lead::after {
+  color: rgba(255, 255, 255, 0.7);
+}

@@ -22,3 +22,27 @@ jobs:
         run: uv run ruff check .
       - name: Test
         run: uv run pytest
+
+  slides:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install slide dependencies
+        run: npm ci
+      - name: Build slides
+        run: npm run slides:build
+      - name: Upload generated slides
+        uses: actions/upload-artifact@v6
+        with:
+          name: slides-${{ github.sha }}
+          path: |
+            dist/slides.html
+            dist/slides.pdf
+            dist/slides.pptx
+          retention-days: 30
+          if-no-files-found: error

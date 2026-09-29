@@ -1,0 +1,19 @@
+{
+  "name": "research-project-slides",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Marp slides for the research project",
+  "scripts": {
+    "slides:preview": "marp slides/slides.md --theme-set slides/themes/research.css --html --allow-local-files --server",
+    "slides:html": "marp slides/slides.md --theme-set slides/themes/research.css --html --allow-local-files --output dist/slides.html",
+    "slides:pdf": "marp slides/slides.md --theme-set slides/themes/research.css --pdf --allow-local-files --output dist/slides.pdf",
+    "slides:pptx": "marp slides/slides.md --theme-set slides/themes/research.css --pptx --allow-local-files --output dist/slides.pptx",
+    "slides:build": "npm run slides:html && npm run slides:pdf && npm run slides:pptx"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "4.5.1"
+  },
+  "overrides": {
+    "@xmldom/xmldom": "0.9.12"
+  }
+}
