@@ -25,6 +25,10 @@ section {
   line-height: 1.38;
 }
 
+section > * {
+  flex-shrink: 0;
+}
+
 section::after {
   right: 26px;
   bottom: 16px;
